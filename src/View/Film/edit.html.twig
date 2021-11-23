@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <form action="/films/update?={{film.id}}" method="post">
+    <label for="title"></label>
+        <input type="text" placeholder="{{film.title}}" name="title" id="title" required>
+    <label for="description"></label>
+        <input type="textarea" placeholder="{{film.description}}" name="description" id="description" required>
+    <label for="year"></label>
+        <input type="number" placeholder="{{film.year}}" name="year" id="year" required>
+    <label for="category">
+        <select name="category_id" id="category_id">
+        {% for category in categories %}
+            <option value="{{category.id}}">{{category.name}}</option>
+        {% endfor %}
+        </select>
+    <label for "button">
+        <input type="submit" value="Modifier le film">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<h1>{{film.title}}</h1>
+
+<h2>{{film.year}}</h2>
+
+<i>{{film.description}}</i>
+
+<a href="/films/delete?id={{film.id}}"><button value="supprimer">Supprimer</button></a>
+<a href="/films/edit?id={{film.id}}"><button value="modifier">Modifier</button></a>
+
+{% endblock %}
